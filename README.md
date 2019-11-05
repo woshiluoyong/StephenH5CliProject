@@ -8,7 +8,7 @@
 
 > 本项目预置了vconsole调试库,方便在微信里面调试逻辑,js/stephen.js里面可打开使用
 
-惯例，先上图(如果截图抽风没展示出来，请在screenShot文件夹下查看):
+## 惯例，先上图(如果截图抽风没展示出来，请在screenShot文件夹下查看):
 ![kk比分h5注册截图](https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/1.jpg)
 ![诸葛信用截图](https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/2.jpg)
 ![诸葛信用截图](https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/3.jpg)
