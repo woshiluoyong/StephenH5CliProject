@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <title>StephenH5Cli</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
+    <link rel="stylesheet" href="../css/common.css"/>
+    <link rel="stylesheet" href="../css/override.css"/>
+    <style type="text/css">
+        .content-info{
+            width: 100%;
+            height: 90%;
+            text-align: center;
+            padding-top: 3rem;
+            overflow-y: scroll;
+        }
+        .img-logo {
+            width: 6.5rem;
+            height: 6.5rem;
+        }
+        .txt-logo {
+            color: #171534;
+            font-size: 1.7rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        .main-info{
+            margin-top: .5rem;
+            margin-left: 15%;
+            margin-right: 15%;
+            padding: .7rem .5rem;
+            border-radius: .3rem;
+            color: #323232;
+            font-size: .95rem;
+            display: flex;
+        }
+        .main-info .title{
+            flex: 1;
+        }
+        .main-info .title .txt-left{
+            color: #323232;
+            font-size: 1rem;
+        }
+        .main-info .input{
+            flex: 3.5;
+            position: relative;
+        }
+        .main-info .input input{
+            width: 100%;
+            font-size: 1rem;
+            border-bottom: 1px solid #F2F1F1;
+        }
+        .main-info .input .send-code{
+            width: 6rem;
+            color: #171534;
+            position: absolute;
+            right: 0rem;
+            top: -.1rem;
+        }
+        #inviteCode{
+            color: #919191;
+        }
+        .bind-btn{
+            margin-top: 2rem;
+            margin-left: 15%;
+            margin-right: 15%;
+            border-radius: 3rem;
+            font-size: 1.1rem;
+            color: white;
+            background-color: #171534 !important;
+        }
+        #download-btn{
+            margin-top: 2rem !important;
+        }
+        #viewProtocol{
+            position: relative;
+            top: .1rem;
+        }
+
+        .protocol-info{
+            margin-left: 20%;
+            margin-right: 20%;
+        }
+        .protocol-html{
+            height: 100%;
+        }
+        .protocol-html .protocol-text{
+            height: 90%;
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-info">
+        <img src="../images/img_logo.png" class="img-logo"/>
+        <div class="txt-logo">注册</div>
+        <div class="main-info">
+            <span class="title tl">
+                <div class="txt-left">手机号</div>
+            </span>
+            <span class="input tl">
+                <input type="number" placeholder="请输入您的手机号" id="phoneNum"/>
+            </span>
+        </div>
+        <div class="main-info">
+            <span class="title tl">
+                <div class="txt-left">验证码</div>
+            </span>
+            <span class="input tl">
+                <input type="text" placeholder="请输入验证码" id="checkCode"/>
+                <div class="send-code tc" id="getCheckCode">获取验证码</div>
+            </span>
+        </div>
+        <div class="main-info">
+            <span class="title tl">
+                <div class="txt-left">密码</div>
+            </span>
+            <span class="input tl">
+                <input type="password" placeholder="请设置登录密码" id="passWord"/>
+            </span>
+        </div>
+        <div class="main-info">
+            <span class="title tl">
+                <div class="txt-left">推荐人</div>
+            </span>
+            <span class="input tl">
+                <input type="text" placeholder="暂无推荐码" id="inviteCode" disabled/>
+            </span>
+        </div>
+        <div class="weui-cells weui-cells_checkbox main-info protocol-info">
+            <label class="weui-cell weui-check__label" for="checkProtocal">
+                <div class="weui-cell__hd">
+                    <input type="checkbox" class="weui-check" name="checkbox1" id="checkProtocal">
+                    <i class="weui-icon-checked"></i>
+                </div>
+            </label>
+            <div class="weui-cell__bd" id="viewProtocol">
+                <p class="tl">《用户服务协议》</p>
+            </div>
+        </div>
+        <a href="javascript:;" class="weui-btn weui-btn_primary bind-btn" id="register-btn">注册</a>
+        <a href="javascript:;" class="weui-btn weui-btn_primary bind-btn" id="download-btn">关于</a>
+    </div>
+
+    <div id="protocolContent">
+        <div class="protocol-html" style="display: none;">
+            <div class="back-title close-protocol"><!--页面头-->
+                <a class="back-btn" href="javascript:void(0);"></a>
+                <span class="tit-text">用户服务协议</span>
+            </div>
+            <iframe src="http://invite.bifenkk.com/privacy.html" frameBorder="0" style="width: 100%;height: 95%;"></iframe>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+<script src="../js/stephen.js"></script><!--统一引入自定义js-->
+<script src="../js/layer.js"></script>
+<script type="text/javascript">
+    //init
+    $(function () {
+        var inviteCode = GetQueryString("inviteCode");
+        if(inviteCode && inviteCode.length > 0) $("#inviteCode").val(inviteCode);
+
+        $("#getCheckCode").off("click").on("click", function() {
+            if (!$("#phoneNum").val() || !(/^1\d{10}$/.test($("#phoneNum").val()))) {
+                $.toast("请输入一个正确的手机号!", 'text');
+                return;
+            } // end of if
+            ApiRequestMethod(false, true, '/msg/sendMsg/'+$("#phoneNum").val()+'/1', null, function(data) {
+                $.toast("验证码已发送,请注意查收!", 'text');
+            });
+        });
+        $("#register-btn").off("click").on("click", function() {
+            if (!$("#checkProtocal").prop("checked")) {
+                $.toast("请阅读并同意用户服务协议!", 'text');
+                return;
+            } // end of if
+            if (!$("#phoneNum").val() || !(/^1\d{10}$/.test($("#phoneNum").val()))) {
+                $.toast("请输入一个正确的手机号!", 'text');
+                return;
+            } // end of if
+            if (!$("#checkCode").val()) {
+                $.toast("请输入验证码!", 'text');
+                return;
+            } // end of if
+            if (!$("#passWord").val()) {
+                $.toast("请输入密码!", 'text');
+                return;
+            } // end of if
+            ApiRequestMethod(true, true, '/auth/reg', { clientFlag: 'pc', account: $("#phoneNum").val(),yzmCode: $("#checkCode").val(), password: $("#passWord").val(), inviteCode: $("#inviteCode").val() }, function(data) {
+                $.alert("注册成功,请下载App畅玩吧!", function() {});
+            });
+        });
+        $("#viewProtocol").click(function () {
+            protocolIndex = layer.open({
+                type: 1,
+                content: $("#protocolContent").html(),//'http://invite.bifenkk.com/privacy.html',
+                anim: 'up',
+                style: 'position:fixed; left:0; top:0; width:100%; height:100%; border: none; -webkit-animation-duration: .5s; animation-duration: .5s;',
+                success: function(elem){
+                    setTimeout(function () {
+                        $(".protocol-html").show();
+                        $(".close-protocol").on('click',function () {
+                            if(-1 != protocolIndex)layer.close(protocolIndex);
+                            $(".protocol-html").hide();
+                        });
+                    },500);
+                }
+            });
+        });
+        $("#download-btn").off("click").on("click", function() {
+            $.confirm("确定跳转去关于界面吗?", function() {
+                window.location.href = 'aboutPlatform.html';
+            }, function() {});
+        });
+    });
+</script>
+</html>

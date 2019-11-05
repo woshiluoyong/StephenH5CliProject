@@ -1,0 +1,16 @@
+/*override weui css*/
+.weui-cell{
+    padding: 0px !important;
+}
+.weui-dialog__btn.primary{
+    color: #171534 !important;
+}
+.weui-cells:before{
+    border: 0px solid transparent;
+}
+.weui-cells:after{
+    border: 0px solid transparent;
+}
+.weui-cells_checkbox .weui-check:checked+.weui-icon-checked:before{
+    color: #171534 !important;
+}
