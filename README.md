@@ -8,6 +8,8 @@
 
 > 本项目预置了vconsole调试库,方便在微信里面调试逻辑,js/stephen.js里面可打开使用
 
+> 具体clone项目体验绝对巴适!
+
 ## Use Setup
 
 ``` shell
