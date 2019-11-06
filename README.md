@@ -27,10 +27,10 @@ git clone https://github.com/woshiluoyong/StephenH5CliProject.git
 
 >> ### 最后，展示截图(如果截图抽风没展示出来，请在screenShot文件夹下查看):
 <p>
-	<img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/1.jpg" alt="kk比分h5注册截图"  width="200" height="400">
-    <img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/2.jpg" alt="诸葛信用截图"  width="200" height="400">
-    <img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/3.jpg" alt="诸葛信用截图"  width="200" height="400">
-    <img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/4.jpg" alt="诸葛信用截图"  width="200" height="400">
-    <img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/5.jpg" alt="小益智能柜截图"  width="200" height="400">
-    <img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/6.jpg" alt="小益智能柜截图"  width="200" height="400">
+	<img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/1.jpg" alt="kk比分h5注册截图"  width="200" height="380">
+    <img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/2.jpg" alt="诸葛信用截图"  width="200" height="380">
+    <img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/3.jpg" alt="诸葛信用截图"  width="200" height="380">
+    <img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/4.jpg" alt="诸葛信用截图"  width="200" height="380">
+    <img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/5.jpg" alt="小益智能柜截图"  width="200" height="380">
+    <img src="https://github.com/woshiluoyong/StephenH5CliProject/blob/master/screenShot/6.jpg" alt="小益智能柜截图"  width="200" height="380">
 </p>
